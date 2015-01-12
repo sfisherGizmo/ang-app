@@ -1,5 +1,5 @@
 var sgApp = angular.module('sgApp', 
-	["ngRoute", "appControllers", "ngResource"])
+	['ngRoute', 'appControllers', 'ngResource', 'LocalStorageModule'])
 	.constant(
 		'SG_API', {
 			'BASE': "https://restapi.surveygizmo.com/v4",
@@ -33,7 +33,7 @@ var sgApp = angular.module('sgApp',
 
 var appControllers = angular.module('appControllers', []);
 
-sgApp.config(['$routeProvider', function($routeProvider) {
+sgApp.config(['$routeProvider', 'localStorageServiceProvider', function($routeProvider, localStorageServiceProvider) {
   $routeProvider.
   	when('#', {
    		templateUrl: '/login'
@@ -53,5 +53,11 @@ sgApp.config(['$routeProvider', function($routeProvider) {
     otherwise({
       	redirectTo: '/login'
     });
+
+    localStorageServiceProvider
+    	.setPrefix('sgApp')
+    	//.setStorageType('sessionStorage')
+    	.setStorageCookie(5, '/login')
+    	.setNotify(true, true);
 
 }]);
