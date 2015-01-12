@@ -3,7 +3,7 @@ var sgApp = angular.module('sgApp',
 	.constant(
 		'SG_API', {
 			'BASE': "https://restapi.surveygizmo.com/v4",
-			'CRED' : "steve@universal-nets.com:hawaii50",
+			'CRED' : "XXX@XXX:XXX",
 			'PAGE' : "&page=",
 			'PER' : "&resultsperpage=",
 			'SID' : '1958124',
