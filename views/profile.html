@@ -1,1 +1,35 @@
-<h1>Profile</h1>
+<div class="form-wrap">
+	<form name="profile" class="all-forms" id="userProf" novalidate>
+		<input type="hidden" value="{{uid}}">
+		<input type="hidden" value="{{userID}}">
+		<div class="heading">
+			<p>Hello {{ userFName }}</p>
+		</div>
+		<div class="form-row">
+			<input type="text" name="firstname" class="text-input half" placeholder="First Name" 
+				ng-model="userFName" ng-required="true">
+			<input type="text" name="lastname" class="text-input half" placeholder="Last Name" 
+				ng-model="userLName" ng-required="true">
+		</div>
+		<div class="form-row">
+			<input type="email" name="email" class="text-input" placeholder="Email Address" 
+				ng-model="userID" ng-required="true">
+		</div>
+		<div class="form-row">
+			<input type="text" name="addressOne" class="text-input" placeholder="Address" 
+				ng-model="user.addressOne">
+		</div>
+		<div class="form-row">
+			<input type="text" name="addressTwo" class="text-input" placeholder="Address Continued" 
+				ng-model="user.addressTwo">
+		</div>
+		<div class="form-row">
+			<input type="text" name="city" class="text-input half" placeholder="City" 
+				ng-model="user.city">
+			<input type="text" name="state" class="text-input state" placeholder="State" 
+				ng-model="user.state">
+			<input type="text" name="zip" class="text-input half" placeholder="Zip" 
+				ng-model="user.zip">
+		</div>
+	</form>
+<div>

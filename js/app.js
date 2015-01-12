@@ -3,7 +3,7 @@ var sgApp = angular.module('sgApp',
 	.constant(
 		'SG_API', {
 			'BASE': "https://restapi.surveygizmo.com/v4",
-			'CRED' : "XXX@XXXX:XXXXXX",
+			'CRED' : "steve@universal-nets.com:hawaii50",
 			'PAGE' : "&page=",
 			'PER' : "&resultsperpage=",
 			'SID' : '1958124',
@@ -36,23 +36,22 @@ var appControllers = angular.module('appControllers', []);
 sgApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider.
   	when('#', {
-   		templateUrl: '/login.html'
-      	//controller: 'RegistrationController'
+   		templateUrl: '/login'
     }).
     when('/login', {
       	templateUrl: 'views/login.html',
       	controller: 'UserController'
     }).
     when('/profile', {
-      	templateUrl: 'views/profile.html'
-      	//controller: 'RegistrationController'
+      	templateUrl: 'views/profile.html',
+      	controller: 'UserController'
     }).
     when('/available', {
       	templateUrl: 'views/available.html'
       	//controller: 'RegistrationController'
     }).
     otherwise({
-      	redirectTo: '/login.html'
+      	redirectTo: '/login'
     });
 
 }]);

@@ -3,14 +3,14 @@
 		<div class="nav-container">
 			<ul>
 				<li class="branding">
-					<a ng-href="#/"><img src="http://squibble-fish.com/wp-content/uploads/2014/10/Web-Logo.png" width="200"/></a>
+					<a ng-href="#/"><img src="http://squibble-fish.com/wp-content/uploads/2014/10/Web-Logo.png" width="200"/ title="Log me Out"></a>
 				</li>
 				<li class="border-left"></li>
-				<li ng-hide="uid"><a ng-href="#/login">Users</a></li>
+				<li ng-hide="uid"><a ng-href="#/login" title="Register / Login">Users</a></li>
 				<li ng-hide="uid" class="border-left"></li>
 				<li ng-show="uid"><a ng-href="#/profile">Profile</a></li>
 				<li ng-show="uid" class="border-left"></li>
-				<li ng-show="uid"><a ng-href="#/available">Available</a></li>
+				<li ng-show="uid"><a ng-href="#/available">Surveys</a></li>
 				<li class="border-right"></li>
 			</ul>
 		</div>

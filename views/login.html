@@ -1,5 +1,5 @@
 <div class="form-wrap">
-	<form ng-submit="register();" class="all-forms floats third" name="reg" id="register" novalidate>
+	<form ng-submit="register();" class="all-forms floats third" name="reg" id="register" novalidate autocomplete="off">
 		<div class="inner-form left">
 			<div class="heading">
 				<span>Register</span>
@@ -12,9 +12,21 @@
 				Your email is required to register
 			</p>
 			
+			<p class="error validationerror" 
+				ng-show="reg.firstname.$invalid && reg.firstname.$touched || reg.lastname.$invalid && reg.lastname.$touched">
+				Your Name is required to register
+			</p>
+			
+			<div class="form-row">
+				<input type="text" name="firstname" class="text-input half" placeholder="First Name" 
+				ng-model="newUser.firstname" ng-required="true">
+				<input type="text" name="lastname" class="text-input half" placeholder="Last Name" 
+				ng-model="newUser.lastname" ng-required="true">
+			</div>
+
 			<div class="form-row">
 				<input type="email" name="user" class="text-input" placeholder="Email" 
-				ng-model="newUser.user" ng-required="true">
+				ng-model="newUser.user" ng-required="true" autocomplete="off">
 			</div>
 			
 			<p class="error validationerror" 
@@ -24,7 +36,7 @@
 			
 			<div class="form-row">
 				<input type="password" name="password" class="text-input" placeholder="Password"
-				ng-model="newUser.password" ng-required="true">
+				ng-model="newUser.password" ng-required="true" autocomplete="off">
 			</div>
 			<div class="form-row button">
 				<button type="submit" ng-disabled="myform.$invalid" id="reg-button" class="letMeIn">Register</button>
@@ -35,7 +47,7 @@
 	<div class="veritcal-break floats">
 		<span class="label">or</span>
 	</div>
-	<form ng-submit="login();" class="all-forms floats third" name="log" id="login" novalidate>
+	<form ng-submit="login();" class="all-forms floats third" name="log" id="login" novalidate autocomplete="off">
 		<div class="inner-form right">
 			<div class="heading">
 				<span>Login</span>
@@ -44,18 +56,18 @@
 			<p class="error" ng-show="noUser">{{ noUser }}</p>
 
 			<p class="error validationerror" 
-				ng-show="login.email.$invalid && login.email.$touched">
+				ng-show="log.email.$invalid && log.email.$touched">
 				Your email is required to register</p>
 			<div class="form-row">
 				<input type="email" name="email" class="text-input" placeholder="Email"
-				ng-model="user.email" ng-required="true">
+				ng-model="user.email" ng-required="true" autocomplete="off">
 			</div>
 			<p class="error validationerror" 
-				ng-show="login.password.$invalid && login.password.$touched">
+				ng-show="log.password.$invalid && log.password.$touched">
 				A password is required</p>
 			<div class="form-row">
 				<input type="password" name="password" class="text-input" placeholder="Password"
-				ng-model="user.pass" ng-required="true">
+				ng-model="user.pass" ng-required="true" autocomplete="off">
 			</div>
 			<div class="form-row button">
 				<button id="log-button" class="letMeIn">Login</button>

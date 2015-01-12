@@ -108,13 +108,13 @@ li.branding {
 	background-color: white;
 	padding: 0 20px;
 	position: relative;
-	top: 67px;
+	top: 5em;
 	left: -1em;
 }
 
 .veritcal-break {
 	border-right: 1px solid;
-	height: 160px;
+	height: 12em;
 	width: 1px;
 }
 
@@ -154,6 +154,14 @@ li.branding {
 	border-style: solid;
 	border-width: 2px;
 	width: 400px;
+}
+
+.half {
+	width: 179px;
+}
+
+.state {
+	width: 50px;
 }
 
 /* Button */

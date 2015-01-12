@@ -1,4 +1,4 @@
-sgApp.controller('UserController' , function($scope, $resource, $http, SG_API, Rest, $rootScope){
+sgApp.controller('UserController' , function($scope, $resource, $http, SG_API, Rest, $rootScope, $location){
 
 
 
@@ -28,8 +28,10 @@ sgApp.controller('UserController' , function($scope, $resource, $http, SG_API, R
 					console.log(response);
 					if (response.result_ok == true) {
 						$rootScope.uid = response.data.id;
-						$rootScope.userID = filter.user;
-						console.log($scope.uid);
+						$rootScope.userID = filters.user;
+						$rootScope.userFName = filters.firstname;
+						$rootScope.userLName = filters.lastname;
+						$location.path('/profile');
 					}
 				});
 			}
@@ -58,8 +60,11 @@ sgApp.controller('UserController' , function($scope, $resource, $http, SG_API, R
 				}
 				else {
 					$rootScope.uid = response.data[0]["id"];
-					$rootScope.userID = filter.email;
-					console.log($scope.uid);
+					$rootScope.userID = filters.email;
+					$rootScope.userFName = response.data[0]["[question(4)]"];
+					$rootScope.userLName = response.data[0]["[question(5)]"];
+					$location.path('/available');
+					console.log($rootScope.userID);
 				}
 		});	
 	}
